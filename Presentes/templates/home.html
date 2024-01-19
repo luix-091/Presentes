@@ -1,28 +1,36 @@
+{% extends 'templates/base.html' %}
 {% load static %}
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presentes</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  <title>Página Inicial</title>
 </head>
 <body>
-    <header class="barra-head">
-        <div class="texto-head">
-            <h2>Bem vindo ao site</h2>
-        </div>
-        <div class="area-login">
-            {% if user.is_authenticated %}
-            <a href="">Criar desejo</a>
-            <a href="">Meus desejos</a>
-            <a href="{% url 'logout' %}">Sair</a>
-            {% else %}
-            <a href="{% url 'login' %}">Entrar</a>
-            {% endif %}
-        </div>
-    </header>
+    {% block content %}
+    <include header.html></include>
+    {% if user.is_authenticated %}
+    <section class="main-content">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel velit in odio rhoncus aliquet non et dui.
+        </p>
+        <p>
+            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce ac nunc eget velit
+            ultrices bibendum. Sed vulputate venenatis dolor, et aliquam orci pellentesque vel.
+        </p>
+    </section>
+    {% else %}
+    <div class="not-logged-in-message">
+        <p>Por favor, faça login para poder ver todos os presentes!</p>
+    </div>
+    {% endif %}
+    <footer>
+        <p>© 2024 Luiz-Maria. Todos os direitos reservados.</p>
+    </footer>
+    {% endblock %}
 </body>
-<link rel="stylesheet" href="{% static 'css/home.css' %}">
-<script src="{% static 'js/script.js' %}"></script>
 </html>

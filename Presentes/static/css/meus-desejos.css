@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sofia';
+    background-color: #ffe6f9;
+    color: #333;
+}
+
+header {
+    background-color: #c28ae2;
+    color: #fff;
+    padding: 7px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.header-content h1 {
+    margin: 0;
+}
+
+.botoes{
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+    margin-left: auto;
+}
+
+.header-content a {
+    padding: 5px;
+    margin-left: 25px;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    border-radius: 4px;
+    transition: 0.1s ease-out;
+}
+
+.header-content a.link:hover{
+    background-color: #ffe6f9;
+    color: rgb(175, 117, 223);
+}
+
+
+.main-text {
+    margin: 0 auto;
+    margin-top: 10px;
+    text-align: center;
+    width: 480px;
+    padding: 10px;
+    background-color: #ffface;
+    border-radius: 10px;
+    font-family: 'Cookie', cursive;
+    font-size: 86px;
+    color: #3a4d63;
+    letter-spacing: 10px; 
+}
+
+hr {
+    border-width: 10px;
+    color: #13d0ff;
+}
+
+
+.presentes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; 
+}
+
+.presente-box {
+    border: 5px solid #d1aedb;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.presente-box h2{
+    font-family: 'Georgia';
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.presente-box li{
+    font-size: 22px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: -20px;
+}
+
+.presente-box form{
+    text-align: end;
+}
+
+.presente-box button{
+    background-color: #f19797;
+    font-size: 20px;
+    font-family: 'Arial';
+    padding: 5px;
+    transition: 0.1s ease-in;
+}
+
+
+.presente-box button:hover{
+    background-color: #e6a9a9;
+}
+
+
+img {
+    max-width: 100%;
+    height: 200px;
+    padding-top: 10px;
+}

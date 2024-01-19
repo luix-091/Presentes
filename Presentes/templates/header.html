@@ -1,0 +1,14 @@
+<header>
+    <div class="header-content">
+      <h1><a href="{% url 'home' %}">Presentes Luiz-Maria!</a></h1>
+      {% if user.is_authenticated %}
+      <div class="botoes">
+        <a class="link" href="{% url 'cadastro-desejo' %}">Adicionar desejo</a>
+        <a class="link" href="{% url 'meus-desejos' %}">Meus desejos</a>
+        <a class="link" href="{% url 'logout' %}">Sair</a>
+        {% else %}
+        <a class="link" href="{% url 'login' %}">Login</a>
+        {% endif %}
+      </div>
+    </div>
+  </header>

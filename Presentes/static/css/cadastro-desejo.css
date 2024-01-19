@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sofia';
+    background-color: #ffe6f9;
+    color: #333;
+}
+
+header {
+    background-color: #c28ae2;
+    color: #fff;
+    padding: 7px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.header-content h1 {
+    margin: 0;
+}
+
+.botoes{
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+    margin-left: auto;
+}
+
+.header-content a {
+    padding: 5px;
+    margin-left: 25px;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    border-radius: 4px;
+    transition: 0.1s ease-out;
+}
+
+.header-content a.link:hover{
+    background-color: #ffe6f9;
+    color: rgb(175, 117, 223);
+}
+
+.main-content {
+    max-width: 600px;
+    margin: 100px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-family: 'Cookie';
+    font-size: 72px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Cookie';
+}
+
+label {
+    font-family: 'Pacifico';
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+input[type="file"]{
+    width: 1px;
+    height: 1px;
+}
+
+.custom-file-input {
+    position: relative;
+    display: inline-block;
+    
+}
+
+.custom-file-input .file-label {
+    width: 560px;
+    text-align: center;
+    margin-top: 10px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #cd8ef7;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.custom-file-input input {
+    position: absolute;
+    font-size: 18px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-file-input:hover .file-label {
+    background-color: #0d47a1;
+}
+
+
+button {
+    background-color: #219b02;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 42px;
+    font-family: 'Sofia';
+}
+
+button:hover {
+    background-color: #096611;
+}
+
+#foto {
+    max-width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: block;
+}

@@ -1,23 +1,37 @@
 {% load static %}
 
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presentes</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/login.css'%}">
+  <title>Página de Login</title>
 </head>
 <body>
-    <div class="texto-login">Login</div>
-    <div class="dados-login">
-        <form method="GET">
-            <label for="username">Nome:</label>
-            <input type="text" name="username" class="dados1">
-            <br>
-            <label for="senha">Senha:</label>
-            <input type="text" name="senha" class="dados2">
-        </form>
+    {% block content %}
+    <header>
+      <div class="header-content">
+        <h1><a href="{% url 'home' %}">Bem-vindo à Página Inicial</a></h1>
+      </div>
+    </header>
+
+    <div class="login-container">
+
+      <form class="login-form" method="POST">
+        {% csrf_token %}
+        <h2>LOGIN</h2>
+        <label for="username">Usuário:</label>
+        <input type="text" id="username" name="username" required autocomplete="off">
+      
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" required autocomplete="off">
+
+        <button type="submit">Entrar</button>
+      </form>
+
     </div>
+    {% endblock %}
 </body>
-<link rel="stylesheet" href="{% static 'css/login.css' %}">
 </html>

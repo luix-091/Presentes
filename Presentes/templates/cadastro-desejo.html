@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/cadastro-desejo.css' %}">
+    <title>Cadastrar Desejos</title>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1><a href="{% url 'home' %}">Bem-vindo à Página Inicial</a></h1>
+            </div>
+        </div>
+    </header>
+    <div class="main-content">
+        <h2>Insira os dados do presente</h2>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <label for="id_nome">Nome:</label>
+            <input type="text" name="nome" maxlength="200" required="" id="id_nome" autocomplete="off">
+
+            <label for="id_descricao">Descrição:</label>
+            <input type="text" name="descricao" maxlength="200" required="" id="id_descricao" autocomplete="off">
+
+            <label for="id_preco">Preço:</label>
+            <input type="number" name="preco" step="any" required="" id="id_preco" autocomplete="off">
+
+            <label for="id_foto" class="custom-file-input">
+                <span class="file-label">Foto</span>
+                <input type="file" name="foto" accept="image/*" id="id_foto" onchange="previewImage(this)">
+            </label>
+            <img id="foto" class="foto" src="">
+
+            <button type="submit">Postar Presente</button>
+        </form>
+    </div>
+    
+</body>
+<script src="{% static 'js/cadastro-desejo.js' %}"></script>
+</html>

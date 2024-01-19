@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/meus-desejos.css' %}">
+    <title>Meus Desejos</title>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1><a href="{% url 'home' %}">Bem-vindo à Página Inicial</a></h1>
+            </div>
+        </div>
+    </header>
+    <h1 class="main-text">Seus Desejos</h1>
+    <hr>
+    <div class="presentes-container">
+        {% for presente in presentes %}
+            <div class="presente-box">
+                <h2>{{ presente.nome }}</h2>
+                <img src="{% static '' %}{{ presente.foto }}" alt="{{ presente.nome }}" class="foto">
+                <ul>
+                    <li class="descricao">Descrição: {{ presente.descricao }}</li>
+                    <li class="preco">Preço: R$ {{ presente.preco|floatformat:2 }}</li>
+                </ul>
+                <form method="post" action="{% url 'apagar_presente' presente.id %}" >
+                    {% csrf_token %}
+                    <button type="submit" onclick="return confirm('Tem certeza que deseja apagar este presente?')" class="btn-apagar">Apagar</button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
