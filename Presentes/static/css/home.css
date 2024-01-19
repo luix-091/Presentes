@@ -1,0 +1,40 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: 'Roboto Mono', monospace;
+}
+
+header{
+    display: flex;
+    min-width: 250px;
+    height: 50px;
+    background-color: bisque;
+}
+
+header .area-login{
+    font-size: 16px;
+    display: flex;
+    align-self: center;
+    margin-right: 10px;
+    margin-left: auto;
+}
+
+header .area-login a{
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+}
+
+header .texto-head{
+    background-color: brown;
+    max-height: 50px;
+    min-width: 210px;
+    width: 210px;
+    text-align: center;
+    align-self: center;
+    font-size: 12px;
+}
