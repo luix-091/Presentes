@@ -39,13 +39,11 @@ def cadastro_desejo(request):
         if form.is_valid():
             presente = form.save(commit=False)
             presente.usuario = request.user
-            print(request.FILES.get('foto').name)
             presente.foto = request.FILES.get('foto')
             presente.save()
             return redirect('home')
     else:
         form = PresenteForm()
-
     return render(request, 'templates/cadastro-desejo.html', {'form': form})
 
 def meus_desejos(request):

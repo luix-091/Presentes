@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="header-content">
-            <h1><a href="{% url 'home' %}">Bem-vindo à Página Inicial</a></h1>
+            <h1><a href="{% url 'home' %}">Presentes Luiz-Maria!</a></h1>
             </div>
         </div>
     </header>
@@ -20,13 +20,14 @@
         {% for presente in presentes %}
             <div class="presente-box">
                 <h2>{{ presente.nome }}</h2>
-                <img src="{% static '' %}{{ presente.foto }}" alt="{{ presente.nome }}" class="foto">
+                <img src="/{{ presente.foto }}" alt="{{ presente.nome }}" class="foto">
                 <ul>
                     <li class="descricao">Descrição: {{ presente.descricao }}</li>
                     <li class="preco">Preço: R$ {{ presente.preco|floatformat:2 }}</li>
                 </ul>
                 <form method="post" action="{% url 'apagar_presente' presente.id %}" >
                     {% csrf_token %}
+                    <button type="button" class="editar">Editar</button>
                     <button type="submit" onclick="return confirm('Tem certeza que deseja apagar este presente?')" class="btn-apagar">Apagar</button>
                 </form>
             </div>

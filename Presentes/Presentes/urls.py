@@ -26,6 +26,6 @@ urlpatterns = [
     path('logout/', views.deslogar, name='logout'),
     path('cadastro-desejo/', views.cadastro_desejo, name='cadastro-desejo'),
     path('meus-desejos/', views.meus_desejos, name='meus-desejos'),
-    path('presentes/apagar/<int:presente_id>/', views.apagar_presente, name='apagar_presente'),
+    path('apagar/<int:presente_id>/', views.apagar_presente, name='apagar_presente'),
     path('', views.home, name='home')
 ] + static(settings.MEDIA_URL, document_root=settings.STATIC_ROOT)

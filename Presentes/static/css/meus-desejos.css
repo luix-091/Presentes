@@ -82,6 +82,8 @@ hr {
     margin-bottom: 20px;
     margin-top: 10px;
     margin-left: 10px;
+    word-wrap: break-word;
+    text-align: justify;
 }
 
 .presente-box h2{
@@ -103,17 +105,29 @@ hr {
     text-align: end;
 }
 
-.presente-box button{
+.presente-box button {
     background-color: #f19797;
-    font-size: 20px;
-    font-family: 'Arial';
-    padding: 5px;
-    transition: 0.1s ease-in;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Arial', sans-serif;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.1s ease-in;
+    margin-right: 10px; /* Adicionando margem à direita para espaçamento entre os botões */
 }
 
-
-.presente-box button:hover{
+.presente-box button:hover {
     background-color: #e6a9a9;
+}
+
+.presente-box button.editar {
+    background-color: #4caf50; /* Cor verde para o botão de editar */
+}
+
+.presente-box button.editar:hover {
+    background-color: #29792d;
 }
 
 
