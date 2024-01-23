@@ -14,15 +14,22 @@
     {% block content %}
     <include header.html></include>
     {% if user.is_authenticated %}
-    <section class="main-content">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel velit in odio rhoncus aliquet non et dui.
-        </p>
-        <p>
-            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce ac nunc eget velit
-            ultrices bibendum. Sed vulputate venenatis dolor, et aliquam orci pellentesque vel.
-        </p>
-    </section>
+    <h2 class="apresentacao">
+        {% if user.username == 'maria' %}Desejos de Luiz{% else %}Desejos de Maria{% endif %}
+    </h2>
+    <hr>
+    <div class="main-content">
+        {% for presente in presentes %}
+        <div class="presente-box">
+            <h2>{{ presente.nome }}</h2>
+            <img src="{{ presente.foto }}" alt="{{ presente.nome }}" class="foto">
+            <ul>
+                <li class="descricao">Descrição: {{ presente.descricao }}</li>
+                <li class="preco">Preço: R$ {{ presente.preco|floatformat:2 }}</li>
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
     {% else %}
     <div class="not-logged-in-message">
         <p>Por favor, faça login para poder ver todos os presentes!</p>

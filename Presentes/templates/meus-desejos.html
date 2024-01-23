@@ -27,7 +27,7 @@
                 </ul>
                 <form method="post" action="{% url 'apagar_presente' presente.id %}" >
                     {% csrf_token %}
-                    <button type="button" class="editar">Editar</button>
+                    <button type="button" class="editar" onclick="location.href='{% url 'editar-desejo' presente.id %}'">Editar</button>
                     <button type="submit" onclick="return confirm('Tem certeza que deseja apagar este presente?')" class="btn-apagar">Apagar</button>
                 </form>
             </div>

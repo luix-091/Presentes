@@ -8,6 +8,7 @@ body {
     font-family: 'Sofia';
     background-color: #ffe6f9;
     color: #333;
+    
 }
   
 header {
@@ -67,12 +68,78 @@ header {
 }
 
 .main-content {
-    max-width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    max-width: 1800px;
+    min-height: 700px;
+    max-height: 1400px;
     margin: 20px auto;
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+}
+
+.apresentacao{
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 70px;
+    text-align: center;
+    width: 500px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #51587c;
+    font-family: 'Cookie', cursive;
+    color: #292929;
+    letter-spacing: 8px;
+}
+
+.presente-box {
+    border: 5px solid #d1aedb;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-left: 30px;
+    word-wrap: break-word;
+    text-align: justify;
+    min-height: 350px;
+    max-height: 350px;
+}
+
+.presente-box h2{
+    font-family: 'Georgia';
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.presente-box li{
+    font-size: 22px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: -20px;
+}
+
+.presente-box form{
+    text-align: end;
+}
+
+.presente-box button {
+    background-color: #f19797;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Arial', sans-serif;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.1s ease-in;
+    margin-right: 10px; /* Adicionando margem à direita para espaçamento entre os botões */
 }
   
 footer {
@@ -84,4 +151,14 @@ footer {
     bottom: 0;
     width: 100%;
 }
-  
+
+img {
+    max-width: 100%;
+    height: 200px;
+    padding-top: 10px;
+}
+
+hr{
+    border-width: 10px;
+    color: #db27ff;
+}

@@ -20,21 +20,21 @@
             {% csrf_token %}
 
             <label for="id_nome">Nome:</label>
-            <input type="text" name="nome" maxlength="200" required="" id="id_nome" autocomplete="off">
+            <input type="text" name="nome" maxlength="200" required="" id="id_nome" autocomplete="off" value="{{ form.instance.nome }}">
 
             <label for="id_descricao">Descrição:</label>
-            <input type="text" name="descricao" maxlength="200" required="" id="id_descricao" autocomplete="off">
+            <input type="text" name="descricao" maxlength="200" required="" id="id_descricao" autocomplete="off" value="{{ form.instance.descricao }}">
 
             <label for="id_preco">Preço:</label>
-            <input type="number" name="preco" step="any" required="" id="id_preco" autocomplete="off">
+            <input type="number" name="preco" step="any" required="" id="id_preco" autocomplete="off" placeholder="{{ form.instance.preco|floatformat:2 }}">
 
             <label for="id_foto" class="custom-file-input">
                 <span class="file-label">Foto</span>
                 <input type="file" name="foto" accept="image/*" id="id_foto" onchange="previewImage(this)">
             </label>
-            <img id="foto" class="foto" src="">
+            <img id="foto" class="foto" src="/{{ form.instance.foto }}">
 
-            <button type="submit">Postar Presente</button>
+            <button type="submit">{% if editar %}Salvar Alterações{% else %}Postar Presente{% endif %}</button>
         </form>
     </div>
     

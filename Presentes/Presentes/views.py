@@ -31,6 +31,10 @@ def deslogar(request):
     return redirect('home')
 
 def home(request):
+    if request.user.is_authenticated:
+        presentes = Presente.objects.exclude(usuario=request.user)
+        conteudo = {'presentes': presentes}
+        return render(request, 'templates/home.html', conteudo)
     return render(request, 'templates/home.html')
 
 def cadastro_desejo(request):
@@ -47,7 +51,7 @@ def cadastro_desejo(request):
     return render(request, 'templates/cadastro-desejo.html', {'form': form})
 
 def meus_desejos(request):
-    presentes = Presente.objects.all()
+    presentes = Presente.objects.filter(usuario=request.user)
     conteudo = {'presentes': presentes}
     return render(request, 'templates/meus-desejos.html', conteudo)
 
@@ -58,3 +62,17 @@ def apagar_presente(request, presente_id):
         presente.delete()
     
     return redirect('meus-desejos')
+
+def editar_presente(request, presente_id):
+    presente = get_object_or_404(Presente, id=presente_id)
+
+    if request.method == 'POST':
+        form = PresenteForm(request.POST, request.FILES, instance=presente)
+        if form.is_valid():
+            form.save()
+            return redirect('meus-desejos')
+    else:
+        form = PresenteForm(instance=presente)
+
+    return render(request, 'templates/cadastro-desejo.html', {'form': form, 'presente_id': presente_id, 'editar': True})
+
