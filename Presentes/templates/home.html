@@ -1,4 +1,3 @@
-{% extends 'templates/base.html' %}
 {% load static %}
 
 
@@ -8,11 +7,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  <link rel="shortcut icon" href="{% static 'imgs/presente.ico' %}" type="image/x-icon">
   <title>Página Inicial</title>
 </head>
 <body>
-    {% block content %}
-    <include header.html></include>
+    <header>
+        <div class="header-content">
+          <h1><a href="{% url 'home' %}" class="titulo">Presentes Luiz-Maria!</a></h1>
+          {% if user.is_authenticated %}
+          <div class="botoes">
+            <a class="link" href="{% url 'cadastro-desejo' %}">Adicionar desejo</a>
+            <a class="link" href="{% url 'meus-desejos' %}">Meus desejos</a>
+            <a class="link" href="{% url 'logout' %}">Sair</a>
+            {% else %}
+            <a class="link-login" href="{% url 'login' %}">Login</a>
+            {% endif %}
+          </div>
+        </div>
+      </header>
     {% if user.is_authenticated %}
     <h2 class="apresentacao">
         {% if user.username == 'maria' %}Desejos de Luiz{% else %}Desejos de Maria{% endif %}
@@ -25,7 +37,7 @@
             <img src="{{ presente.foto }}" alt="{{ presente.nome }}" class="foto">
             <ul>
                 <li class="descricao">Descrição: {{ presente.descricao }}</li>
-                <li class="preco">Preço: R$ {{ presente.preco|floatformat:2 }}</li>
+                <li class="preco">Preço: {{ presente.preco_real }}</li>
             </ul>
         </div>
         {% endfor %}
@@ -38,6 +50,5 @@
     <footer>
         <p>© 2024 Luiz-Maria. Todos os direitos reservados.</p>
     </footer>
-    {% endblock %}
 </body>
 </html>

@@ -17,7 +17,6 @@ def logar(request):
             messages.error(request, 'Usuário não encontrado!')
 
         user = authenticate(request, username=username, password=senha)
-        print(user)
         if user is not None:
             login(request, user)
             return redirect('home')
@@ -65,7 +64,6 @@ def apagar_presente(request, presente_id):
 
 def editar_presente(request, presente_id):
     presente = get_object_or_404(Presente, id=presente_id)
-
     if request.method == 'POST':
         form = PresenteForm(request.POST, request.FILES, instance=presente)
         if form.is_valid():

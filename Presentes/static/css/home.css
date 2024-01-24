@@ -27,6 +27,19 @@ header {
     margin: 0;
 }
 
+.titulo{
+    font-size: 42px;
+}
+
+.link-login{
+    font-size: 26px;
+}
+
+.link-login:hover{
+    background-color: #ffe6f9;
+    color: rgb(175, 117, 223);
+}
+
 .botoes{
     text-decoration: none;
     color: white;
@@ -39,7 +52,6 @@ header {
     margin-left: 25px;
     text-decoration: none;
     color: white;
-    font-size: 24px;
     border-radius: 4px;
     transition: 0.1s ease-out;
 }
@@ -100,14 +112,13 @@ header {
     border: 5px solid #d1aedb;
     padding: 20px;
     width: 300px;
+    height: fit-content;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     margin-top: 10px;
     margin-left: 30px;
     word-wrap: break-word;
     text-align: justify;
-    min-height: 350px;
-    max-height: 350px;
 }
 
 .presente-box h2{
@@ -141,7 +152,14 @@ header {
     transition: background-color 0.1s ease-in;
     margin-right: 10px; /* Adicionando margem à direita para espaçamento entre os botões */
 }
-  
+
+.preco{
+    background-color: #dff9ff;
+    padding: 5px;
+    border-radius: 5px;
+    max-width: fit-content;
+}
+
 footer {
     background-color: #2e2a2d;
     color: #fff;

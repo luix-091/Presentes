@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/cadastro-desejo.css' %}">
+    <link rel="shortcut icon" href="{% static 'imgs/presente.ico' %}" type="image/x-icon">
     <title>Cadastrar Desejos</title>
 </head>
 <body>
     <header>
         <div class="header-content">
-            <h1><a href="{% url 'home' %}">Bem-vindo à Página Inicial</a></h1>
+            <h1><a href="{% url 'home' %}" class="titulo">Presentes Luiz-Maria!</a></h1>
             </div>
         </div>
     </header>
@@ -26,13 +27,20 @@
             <input type="text" name="descricao" maxlength="200" required="" id="id_descricao" autocomplete="off" value="{{ form.instance.descricao }}">
 
             <label for="id_preco">Preço:</label>
-            <input type="number" name="preco" step="any" required="" id="id_preco" autocomplete="off" placeholder="{{ form.instance.preco|floatformat:2 }}">
-
+            {% if editar %}
+            <input type="text" name="preco" step="any" required="" id="id_preco" autocomplete="off" placeholder="{{ form.preco_real }}">
+            {% else %}
+            <input type="text" name="preco" step="any" required="" id="id_preco" autocomplete="off" placeholder="R$ 0.00">
+            {% endif %}
             <label for="id_foto" class="custom-file-input">
                 <span class="file-label">Foto</span>
                 <input type="file" name="foto" accept="image/*" id="id_foto" onchange="previewImage(this)">
             </label>
+            {% if form.instance.foto == None %}
+            <img id="foto" class="foto" src="">
+            {% else %}
             <img id="foto" class="foto" src="/{{ form.instance.foto }}">
+            {% endif %}
 
             <button type="submit">{% if editar %}Salvar Alterações{% else %}Postar Presente{% endif %}</button>
         </form>

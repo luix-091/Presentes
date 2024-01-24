@@ -25,6 +25,10 @@ header {
     margin: 0;
 }
 
+.titulo{
+    font-size: 42px;
+}
+
 .botoes{
     text-decoration: none;
     color: white;
@@ -37,7 +41,6 @@ header {
     margin-left: 25px;
     text-decoration: none;
     color: white;
-    font-size: 24px;
     border-radius: 4px;
     transition: 0.1s ease-out;
 }
@@ -84,6 +87,7 @@ hr {
     margin-left: 30px;
     word-wrap: break-word;
     text-align: justify;
+    height: fit-content;
 }
 
 .presente-box h2{
@@ -130,6 +134,12 @@ hr {
     background-color: #29792d;
 }
 
+.preco{
+    background-color: #dff9ff;
+    padding: 5px;
+    border-radius: 5px;
+    max-width: fit-content;
+}
 
 img {
     max-width: 100%;

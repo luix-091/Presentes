@@ -17,4 +17,4 @@ function previewImage(input) {
   // Adicione o seguinte trecho para chamar a função quando um arquivo é selecionado
   document.getElementById('id_foto').addEventListener('change', function () {
     previewImage(this);
-  });
+});

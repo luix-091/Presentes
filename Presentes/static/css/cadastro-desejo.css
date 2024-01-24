@@ -25,6 +25,10 @@ header {
     margin: 0;
 }
 
+.titulo{
+    font-size: 42px;
+}
+
 .botoes{
     text-decoration: none;
     color: white;
@@ -37,7 +41,6 @@ header {
     margin-left: 25px;
     text-decoration: none;
     color: white;
-    font-size: 24px;
     border-radius: 4px;
     transition: 0.1s ease-out;
 }
@@ -54,6 +57,13 @@ header {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.preco{
+    background-color: #c6f4ff;
+    padding: 5px;
+    border-radius: 5px;
+    max-width: fit-content;
 }
 
 h2 {
