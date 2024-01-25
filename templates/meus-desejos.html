@@ -21,7 +21,7 @@
         {% for presente in presentes %}
             <div class="presente-box">
                 <h2>{{ presente.nome }}</h2>
-                {% if presente.foto.url %}
+                {% if presente.foto %}
                 <img src="{{ presente.foto.url }}" alt="{{ presente.nome }}" class="foto">
                 {% else %}
                 <img src="" alt="{{ presente.nome }}" class="foto">
