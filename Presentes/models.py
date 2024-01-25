@@ -18,10 +18,8 @@ class Presente(models.Model):
         valor = str(self.preco)
         if 'R$' in valor:
             valor = valor.replace('R$', '')
-            print(valor)
         if ',' in valor:
             valor = valor.replace(',', '.')
-            print(valor)
         try:
             valor = float(valor)
             return f'R$ {valor:,.2f}'

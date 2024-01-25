@@ -28,7 +28,7 @@
 
             <label for="id_preco">Preço:</label>
             {% if editar %}
-            <input type="text" name="preco" step="any" required="" id="id_preco" autocomplete="off" placeholder="{{ form.preco_real }}">
+            <input type="text" name="preco" step="any" required="" id="id_preco" autocomplete="off" placeholder="{{ form.instance.preco_real }}">
             {% else %}
             <input type="text" name="preco" step="any" required="" id="id_preco" autocomplete="off" placeholder="R$ 0.00">
             {% endif %}
