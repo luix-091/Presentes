@@ -34,7 +34,11 @@
         {% for presente in presentes %}
         <div class="presente-box">
             <h2>{{ presente.nome }}</h2>
-            <img src="{{ presente.foto.url }}" alt="{{ presente.nome }}" class="foto">
+              {% if presente.foto.url %}
+              <img src="{{ presente.foto.url }}" alt="{{ presente.nome }}" class="foto">
+              {% else %}
+              <img src="" alt="{{ presente.nome }}" class="foto">
+              {% endif %}
             <ul>
                 <li class="descricao">Descrição: {{ presente.descricao }}</li>
                 <li class="preco">Preço: {{ presente.preco_real }}</li>
