@@ -21,7 +21,7 @@
         {% for presente in presentes %}
             <div class="presente-box">
                 <h2>{{ presente.nome }}</h2>
-                <img src="{% static 'imgs/'%}{{ presente.foto }}" alt="{{ presente.nome }}" class="foto">
+                <img src="{{ presente.foto.url }}" alt="{{ presente.nome }}" class="foto">
                 <ul>
                     <li class="descricao">Descrição: {{ presente.descricao }}</li>
                     <li class="preco">Preço: {{ presente.preco_real }}</li>

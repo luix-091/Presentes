@@ -31,6 +31,8 @@ ALLOWED_HOSTS = ['*', 'https://presentes-985af4cb115d.herokuapp.com/']
 
 LOGIN_REDIRECT_URL = 'home'
 
+FILE_UPLOAD_PERMISSIONS = 0o644
+
 
 # Application definition
 
@@ -122,8 +124,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_URL = '/imgs/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/imgs')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 

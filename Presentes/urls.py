@@ -29,4 +29,4 @@ urlpatterns = [
     path('editar-desejo/<int:presente_id>/', views.editar_presente, name='editar-desejo'),
     path('apagar/<int:presente_id>/', views.apagar_presente, name='apagar_presente'),
     path('', views.home, name='home')
-] + static(settings.MEDIA_URL, document_root=settings.STATIC_ROOT)
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

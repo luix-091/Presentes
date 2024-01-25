@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.conf import settings
 
 class Presente(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.SET_NULL,
@@ -8,7 +7,7 @@ class Presente(models.Model):
     nome = models.CharField(max_length=200)
     descricao = models.CharField(max_length=200)
     preco = models.CharField(max_length=50)
-    foto = models.ImageField(upload_to=f'{settings.BASE_DIR}/static/imgs', null=True, blank=True)
+    foto = models.ImageField(upload_to='images/', null=True, blank=True)
     criado = models.DateField(auto_now_add=True)
     
     def __str__(self) -> str:
