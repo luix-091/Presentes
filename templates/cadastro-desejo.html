@@ -39,7 +39,7 @@
             {% if form.instance.foto == None %}
             <img id="foto" class="foto" src="">
             {% else %}
-            <img id="foto" class="foto" src="/{{ form.instance.foto }}">
+            <img id="foto" class="foto" src="{% static 'imgs/'%}{{ form.instance.foto }}">
             {% endif %}
 
             <button type="submit">{% if editar %}Salvar Alterações{% else %}Postar Presente{% endif %}</button>

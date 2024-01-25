@@ -69,8 +69,6 @@ def editar_presente(request, presente_id):
         if form.is_valid():
             form.save()
             return redirect('meus-desejos')
-    else:
-        form = PresenteForm(instance=presente)
-
+    form = PresenteForm(instance=presente)
     return render(request, 'templates/cadastro-desejo.html', {'form': form, 'presente_id': presente_id, 'editar': True})
 

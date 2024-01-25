@@ -11,11 +11,11 @@ class PresenteForm(forms.ModelForm):
     def preco_real(self):
         valor = str(self['preco'])
         if 'R$' in valor:
-            valor = self['preco'].value().replace('R$', '')
+            valor = valor.replace('R$', '')
         if ',' in valor:
-            valor = self['preco'].value().replace(',', '.')
+            valor = valor.replace(',', '.')
         try:
             valor = float(valor)
             return f'R$ {valor:,.2f}'
-        except Exception as err:
+        except Exception:
             return 'R$ 0.00'

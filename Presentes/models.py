@@ -12,16 +12,18 @@ class Presente(models.Model):
     criado = models.DateField(auto_now_add=True)
     
     def __str__(self) -> str:
-        return f"{self.name}"
+        return f"{self.nome}"
     
     def preco_real(self):
         valor = str(self.preco)
         if 'R$' in valor:
-            valor = self.preco.replace('R$', '')
+            valor = valor.replace('R$', '')
+            print(valor)
         if ',' in valor:
-            valor = self.preco.replace(',', '.')
+            valor = valor.replace(',', '.')
+            print(valor)
         try:
             valor = float(valor)
             return f'R$ {valor:,.2f}'
-        except Exception as err:
+        except Exception:
             return 'R$ 0.00'
