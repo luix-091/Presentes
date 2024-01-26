@@ -36,8 +36,6 @@
             <h2>{{ presente.nome }}</h2>
               {% if presente.foto %}
               <img src="{{ presente.foto.url }}" alt="{{ presente.nome }}" class="foto">
-              {% else %}
-              <img src="" alt="{{ presente.nome }}" class="foto">
               {% endif %}
             <ul>
                 <li class="descricao">Descrição: {{ presente.descricao }}</li>

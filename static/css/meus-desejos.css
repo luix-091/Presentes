@@ -60,9 +60,9 @@ hr{
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    max-width: 1800px;
+    max-width: 1560px;
     min-height: 700px;
-    max-height: 1400px;
+    max-height: fit-content;
     margin: 20px auto;
     padding: 20px;
     background-color: #fff;
@@ -72,6 +72,7 @@ hr{
 
 .presente-box {
     border: 5px solid #fc97d2;
+    min-height: 350px;
     padding: 20px;
     width: 300px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -80,6 +81,9 @@ hr{
     margin-left: 30px;
     word-wrap: break-word;
     text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     height: fit-content;
 }
 
@@ -100,11 +104,15 @@ hr{
 }
 
 .presente-box form{
-    text-align: end;
+    text-align: center;
+}
+
+.botoes{
+    display: flex;
+    align-self: center;
 }
 
 .presente-box button {
-    background-color: #db6262;
     color: #fff;
     font-size: 18px;
     font-family: 'EB Garamond';
@@ -113,10 +121,14 @@ hr{
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.1s ease-in;
-    margin-right: 10px; /* Adicionando margem à direita para espaçamento entre os botões */
+    margin-right: 10px;
 }
 
-.presente-box button:hover {
+.presente-box button.apagar {
+    background-color: rgb(255, 94, 94);
+}
+
+.presente-box button.apagar:hover {
     background-color: rgb(248, 121, 121);
 }
 

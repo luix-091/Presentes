@@ -95,9 +95,9 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    max-width: 1800px;
+    max-width: 1560px;
     min-height: 700px;
-    max-height: 1400px;
+    max-height: fit-content;
     margin: 20px auto;
     padding: 20px;
     background-color: #fff;
@@ -119,16 +119,20 @@ header {
 }
 
 .presente-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     border: 5px solid #fc97d2;
+    min-height: 270px;
     padding: 20px;
     width: 300px;
-    height: fit-content;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     margin-top: 10px;
     margin-left: 30px;
     word-wrap: break-word;
     text-align: justify;
+    height: fit-content;
 }
 
 .presente-box h2{

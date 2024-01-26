@@ -12,7 +12,6 @@
     <header>
         <div class="header-content">
             <h1><a href="{% url 'home' %}" class="titulo">Presentes Luiz-Maria!</a></h1>
-            </div>
         </div>
     </header>
     <h1 class="main-text">Seus Desejos</h1>
@@ -23,18 +22,18 @@
                 <h2>{{ presente.nome }}</h2>
                 {% if presente.foto %}
                 <img src="{{ presente.foto.url }}" alt="{{ presente.nome }}" class="foto">
-                {% else %}
-                <img src="" alt="{{ presente.nome }}" class="foto">
                 {% endif %}
                 <ul>
                     <li class="descricao">Descrição: {{ presente.descricao }}</li>
                     <li class="preco">Preço: {{ presente.preco_real }}</li>
                 </ul>
+                <div class="botoes">
+                    <button type="button" class="editar" onclick="editar('{{ presente.id }}')">Editar</button>
                 <form method="post" action="{% url 'apagar_presente' presente.id %}" >
                     {% csrf_token %}
-                    <button type="button" class="editar" onclick="editar('{{ presente.id }}')">Editar</button>
-                    <button type="submit" onclick="return confirm('Tem certeza que deseja apagar este presente?')" class="btn-apagar">Apagar</button>
+                    <button type="submit" onclick="return confirm('Tem certeza que deseja apagar este presente?')" class="apagar">Apagar</button>
                 </form>
+                </div>
             </div>
         {% endfor %}
     </div>
