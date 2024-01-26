@@ -1,64 +1,76 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cookie&family=EB+Garamond&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=EB+Garamond&family=Pacifico&family=Sofia&family=Tangerine&display=swap');
 
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Sofia';
-    background-color: #ffe6f9;
+    background-color: #fadced;
     color: #333;
-    
 }
   
 header {
-    background-color: #c28ae2;
+    display: flex;
+    width: 100%;
+    background: linear-gradient(to right, #fc97d2 40%, #fff);
     color: #fff;
-    padding: 7px;
 }
 
 .header-content {
     display: flex;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
-}
-  
-.header-content h1 {
-    margin: 0;
+    height: 120px;
 }
 
 .titulo{
     font-size: 42px;
-}
-
-.link-login{
-    font-size: 26px;
-}
-
-.link-login:hover{
-    background-color: #ffe6f9;
-    color: rgb(175, 117, 223);
-}
-
-.botoes{
+    font-family: 'Pacifico';
     text-decoration: none;
-    color: white;
-    font-size: 22px;
-    margin-left: auto;
-}
-
-.header-content a {
-    padding: 5px;
-    margin-left: 25px;
-    text-decoration: none;
-    color: white;
-    border-radius: 4px;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 30px;
+    background-color: #fc97d2;
     transition: 0.1s ease-out;
 }
 
-.header-content a.link:hover{
-    background-color: #ffe6f9;
-    color: rgb(175, 117, 223);
+.titulo:hover{
+    background-color: #cfeafc;
+}
+
+.link-login{
+    justify-self: end;
+    font-family: 'Pacifico';
+    font-size: 36px;
+    text-decoration: none;
+    color: #fc97d2;
+    padding: 10px;
+    margin-right: 15px;
+    border-radius: 5px;
+    transition: 0.1s ease-out;
+}
+
+.link-login:hover{
+    background-color: #cfeafc;
+    color: #fff;
+}
+
+.link{
+    justify-self: end;
+    font-family: 'Pacifico';
+    font-size: 36px;
+    text-decoration: none;
+    color: #fc97d2;
+    padding: 10px;
+    margin-right: 15px;
+    border-radius: 5px;
+    transition: 0.1s ease-out;
+}
+
+.link:hover{
+    background-color: #cfeafc;
+    color: #fff;
 }
 
 .not-logged-in-message {
@@ -67,16 +79,16 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #ff8181;
+    background-color: #bfedff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
   
 .not-logged-in-message p {
-    margin: auto;
     font-size: 62px;
-    color: #cc0000;
+    font-family: 'Sofia';
+    color: #fc97d2;
 }
 
 .main-content {
@@ -99,17 +111,15 @@ header {
     margin-bottom: 20px;
     font-size: 70px;
     text-align: center;
-    width: 500px;
+    width: 550px;
     padding: 10px;
     border-radius: 10px;
-    background-color: #51587c;
-    font-family: 'Cookie', cursive;
-    color: #292929;
-    letter-spacing: 8px;
+    font-family: 'Sofia';
+    color: #ffffff;
 }
 
 .presente-box {
-    border: 5px solid #d1aedb;
+    border: 5px solid #fc97d2;
     padding: 20px;
     width: 300px;
     height: fit-content;
@@ -122,7 +132,7 @@ header {
 }
 
 .presente-box h2{
-    font-family: 'Georgia';
+    font-family: 'EB Garamond';
     font-size: 26px;
     text-align: center;
     margin-bottom: 0px;
@@ -130,6 +140,7 @@ header {
 }
 
 .presente-box li{
+    font-family: 'EB Garamond';
     font-size: 22px;
     margin-bottom: 10px;
     margin-top: 10px;
@@ -144,17 +155,17 @@ header {
     background-color: #f19797;
     color: #fff;
     font-size: 18px;
-    font-family: 'Arial', sans-serif;
+    font-family: 'EB Garamond';
     padding: 8px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.1s ease-in;
-    margin-right: 10px; /* Adicionando margem à direita para espaçamento entre os botões */
+    margin-right: 10px;
 }
 
+
 .preco{
-    background-color: #dff9ff;
     padding: 5px;
     border-radius: 5px;
     max-width: fit-content;
@@ -177,6 +188,5 @@ img {
 }
 
 hr{
-    border-width: 10px;
-    color: #db27ff;
+    border: 5px solid #dff9ff;
 }
